@@ -1,5 +1,6 @@
-- @posts.each do |post|
-  %h2= link_to  post.title, post
-  %p= post.description
+#posts
+  - @posts.each do |post|
+    .post
+      %h2= link_to  post.title, post
+<!--      %p= post.description--> 
 
-= link_to "Create post" , new_post_path 

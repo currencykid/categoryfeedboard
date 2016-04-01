@@ -1,6 +1,11 @@
-%h1= @post.title
-%p= @post.description
+#posts
+  .post
+    %h2= @post.title
+    %p= @post.description
+    %button.btn.btn-default= link_to "View stream", @post.url
+#links
+  = link_to "Back", root_path , class: "btn btn-sm btn-default"
+  = link_to "Edit", edit_post_path(@post),  class: "btn btn-sm btn-default"
 
-= link_to "Home", root_path 
-= link_to "Edit", edit_post_path(@post)
-= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} 
+  = link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} ,  class: "btn btn-sm btn-default"
+
